@@ -5,7 +5,7 @@ import java.sql.Timestamp;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "Review")
+@Table(name = "Reviews")
 public class Review {
 
   @Id
@@ -84,7 +84,7 @@ public class Review {
     return customer;
   }
 
-  public void setUser(com.example.myapp.models.Customer customer) {
+  public void setCustomer(com.example.myapp.models.Customer customer) {
     this.customer = customer;
   }
 

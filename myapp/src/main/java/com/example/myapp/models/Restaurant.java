@@ -19,7 +19,7 @@ public class Restaurant {
   @OneToOne
   private Address Address;
 
-  @OneToMany(mappedBy = "restaurant")
+  @OneToMany(mappedBy = "Restaurant")
   private List<Review> Reviews;
 
   @OneToMany(mappedBy = "restaurant")

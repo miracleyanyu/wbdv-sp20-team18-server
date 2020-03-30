@@ -19,7 +19,6 @@ public class Order {
   private List<Item> items;
 
   private Date shippedOn;
-  private Address shipTo;
   private double Total;
 
   @ManyToOne
@@ -32,31 +31,25 @@ public class Order {
 
   private OrderStatus orderStatus;
 
-  public Order(Date orderOn, List<Item> items, Date shippedOn,
-      Address shipTo, double total, Customer customer, Restaurant restaurant,
-      OrderStatus orderStatus) {
-    this.restaurant = restaurant;
+  public Order(Date orderOn, List<Item> items, Date shippedOn, double total, OrderStatus orderStatus, Customer customer, Restaurant restaurant) {
     this.orderOn = orderOn;
     this.items = items;
     this.shippedOn = shippedOn;
-    this.shipTo = shipTo;
     Total = total;
-    this.customer = customer;
     this.orderStatus = orderStatus;
+    this.customer = customer;
+    this.restaurant = restaurant;
   }
 
-  public Order(Integer orderId, Date orderOn, List<Item> items, Date shippedOn,
-      Address shipTo, double total, Customer customer, Restaurant restaurant,
-      OrderStatus orderStatus) {
-    this.restaurant = restaurant;
+  public Order(Integer orderId, Date orderOn, List<Item> items, Date shippedOn, double total, OrderStatus orderStatus, Customer customer, Restaurant restaurant) {
     this.orderId = orderId;
     this.orderOn = orderOn;
     this.items = items;
     this.shippedOn = shippedOn;
-    this.shipTo = shipTo;
     Total = total;
-    this.customer = customer;
     this.orderStatus = orderStatus;
+    this.customer = customer;
+    this.restaurant = restaurant;
   }
 
   public Order() {
@@ -94,14 +87,6 @@ public class Order {
     this.shippedOn = shippedOn;
   }
 
-  public Address getShipTo() {
-    return shipTo;
-  }
-
-  public void setShipTo(Address shipTo) {
-    this.shipTo = shipTo;
-  }
-
   public double getTotal() {
     return Total;
   }
@@ -110,20 +95,20 @@ public class Order {
     Total = total;
   }
 
-  public Customer getCustomer() {
-    return customer;
-  }
-
-  public void setCustomer(Customer customer) {
-    this.customer = customer;
-  }
-
   public OrderStatus getOrderStatus() {
     return orderStatus;
   }
 
   public void setOrderStatus(OrderStatus orderStatus) {
     this.orderStatus = orderStatus;
+  }
+
+  public Customer getCustomer() {
+    return customer;
+  }
+
+  public void setCustomer(Customer customer) {
+    this.customer = customer;
   }
 
   public Restaurant getRestaurant() {
