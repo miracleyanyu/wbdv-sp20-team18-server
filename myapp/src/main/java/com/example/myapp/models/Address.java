@@ -18,21 +18,20 @@ public class Address {
 
   @OneToOne
   private User user;
+//
+//  @OneToOne
+//  private Restaurant restaurant;
 
-  @OneToOne
-  private Restaurant restaurant;
-
-  public Address(String street1, String street2, String city, String state, String zipCode, User user, Restaurant restaurant) {
+  public Address(String street1, String street2, String city, String state, String zipCode, User user) {
     Street1 = street1;
     Street2 = street2;
     City = city;
     State = state;
     ZipCode = zipCode;
     this.user = user;
-    this.restaurant = restaurant;
   }
 
-  public Address(Integer addressId, String street1, String street2, String city, String state, String zipCode, User user, Restaurant restaurant) {
+  public Address(Integer addressId, String street1, String street2, String city, String state, String zipCode, User user) {
     this.addressId = addressId;
     Street1 = street1;
     Street2 = street2;
@@ -40,7 +39,6 @@ public class Address {
     State = state;
     ZipCode = zipCode;
     this.user = user;
-    this.restaurant = restaurant;
   }
 
   public Integer getAddressId() {
@@ -97,13 +95,5 @@ public class Address {
 
   public void setUser(User user) {
     this.user = user;
-  }
-
-  public Restaurant getRestaurant() {
-    return restaurant;
-  }
-
-  public void setRestaurant(Restaurant restaurant) {
-    this.restaurant = restaurant;
   }
 }
