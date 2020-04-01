@@ -19,4 +19,9 @@ public class LogInController {
   public User logIn(@RequestParam("username") String username, @RequestParam("password") String password) {
     return userService.logIn(username, password);
   }
+
+  @PostMapping(value = "/signup.json")
+  public User SignUp(@RequestParam("username") String username, @RequestParam("firstName") String firstName, @RequestParam("lastName") String lastName, @RequestParam("password") String password, @RequestParam("email") String email) {
+    return userService.SignUp(username, firstName, lastName, password, email);
+  }
 }
