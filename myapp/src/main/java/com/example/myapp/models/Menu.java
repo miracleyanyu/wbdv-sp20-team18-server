@@ -11,7 +11,8 @@ public class Menu {
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Integer menuId;
 
-  @OneToMany(mappedBy = "menu")
+  @OneToMany
+  @JoinColumn(name = "menu_id")
   private List<Item> items;
 
   public Menu(List<Item> items) {
@@ -40,5 +41,11 @@ public class Menu {
 
   public void setItems(List<Item> items) {
     this.items = items;
+  }
+
+  public void addItems(Item item) {
+    if (!getItems().contains(item)) {
+      getItems().add(item);
+    }
   }
 }

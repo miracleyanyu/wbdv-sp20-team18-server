@@ -15,29 +15,17 @@ public class Item {
   private double price;
   private Integer quality;
 
-  @ManyToOne
-  @JsonIgnore
-  private Menu menu;
-
-  @ManyToOne
-  @JsonIgnore
-  private Order order;
-
-  public Item(String itemName, double price, Integer quality, Menu menu, Order order) {
+  public Item(String itemName, double price, Integer quality) {
     this.itemName = itemName;
     this.price = price;
     this.quality = quality;
-    this.menu = menu;
-    this.order = order;
   }
 
-  public Item(Integer itemId, String itemName, double price, Integer quality, Menu menu, Order order) {
+  public Item(Integer itemId, String itemName, double price, Integer quality) {
     this.itemId = itemId;
     this.itemName = itemName;
     this.price = price;
     this.quality = quality;
-    this.menu = menu;
-    this.order = order;
   }
 
   public Item() {
@@ -73,21 +61,5 @@ public class Item {
 
   public void setQuality(Integer quality) {
     this.quality = quality;
-  }
-
-  public Menu getMenu() {
-    return menu;
-  }
-
-  public void setMenu(Menu menu) {
-    this.menu = menu;
-  }
-
-  public Order getOrder() {
-    return order;
-  }
-
-  public void setOrder(Order order) {
-    this.order = order;
   }
 }

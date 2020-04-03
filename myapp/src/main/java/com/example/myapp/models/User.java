@@ -12,26 +12,31 @@ public class User {
   private Integer userId;
 
   private String userName;
+  private String firstName;
+  private String lastName;
   private String Password;
   private String Phone;
   private String Email;
 
-  @OneToOne
-  private Address Address;
+  private String Address;
 
-  public User(Integer userId, String userName, String password, String phone, String email,
-      Address address) {
+  public User(Integer userId, String userName, String firstName, String lastName, String password, String phone, String email,
+      String address) {
     this.userId = userId;
     this.userName = userName;
+    this.firstName = firstName;
+    this.lastName = lastName;
     Password = password;
     Phone = phone;
     Email = email;
     Address = address;
   }
 
-  public User(String userName, String password, String phone, String email,
-      Address address) {
+  public User(String userName, String firstName, String lastName, String password, String phone, String email,
+      String address) {
     this.userName = userName;
+    this.firstName = firstName;
+    this.lastName = lastName;
     Password = password;
     Phone = phone;
     Email = email;
@@ -81,11 +86,27 @@ public class User {
     Email = email;
   }
 
-  public Address getAddress() {
+  public String getAddress() {
     return Address;
   }
 
-  public void setAddress(Address address) {
+  public void setAddress(String address) {
     Address = address;
+  }
+
+  public String getFirstName() {
+    return firstName;
+  }
+
+  public void setFirstName(String firstName) {
+    this.firstName = firstName;
+  }
+
+  public String getLastName() {
+    return lastName;
+  }
+
+  public void setLastName(String lastName) {
+    this.lastName = lastName;
   }
 }
