@@ -11,6 +11,9 @@ public class Menu {
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Integer menuId;
 
+  @OneToOne
+  private Restaurant restaurant;
+
   @OneToMany
   @JoinColumn(name = "menu_id")
   private List<Item> items;

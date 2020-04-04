@@ -17,11 +17,11 @@ public class User {
   private String Password;
   private String Phone;
   private String Email;
-
-  private String Address;
+  @OneToOne
+  private Address Address;
 
   public User(Integer userId, String userName, String firstName, String lastName, String password, String phone, String email,
-      String address) {
+      Address address) {
     this.userId = userId;
     this.userName = userName;
     this.firstName = firstName;
@@ -33,7 +33,7 @@ public class User {
   }
 
   public User(String userName, String firstName, String lastName, String password, String phone, String email,
-      String address) {
+      Address address) {
     this.userName = userName;
     this.firstName = firstName;
     this.lastName = lastName;
@@ -86,11 +86,11 @@ public class User {
     Email = email;
   }
 
-  public String getAddress() {
+  public Address getAddress() {
     return Address;
   }
 
-  public void setAddress(String address) {
+  public void setAddress(Address address) {
     Address = address;
   }
 
