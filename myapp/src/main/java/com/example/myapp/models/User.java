@@ -17,11 +17,10 @@ public class User {
   private String Password;
   private String Phone;
   private String Email;
-  @OneToOne
-  private Address Address;
+//  @OneToOne
+//  private Address Address;
 
-  public User(Integer userId, String userName, String firstName, String lastName, String password, String phone, String email,
-      Address address) {
+  public User(Integer userId, String userName, String firstName, String lastName, String password, String phone, String email) {
     this.userId = userId;
     this.userName = userName;
     this.firstName = firstName;
@@ -29,18 +28,17 @@ public class User {
     Password = password;
     Phone = phone;
     Email = email;
-    Address = address;
+//    Address = address;
   }
 
-  public User(String userName, String firstName, String lastName, String password, String phone, String email,
-      Address address) {
+  public User(String userName, String firstName, String lastName, String password, String phone, String email) {
     this.userName = userName;
     this.firstName = firstName;
     this.lastName = lastName;
     Password = password;
     Phone = phone;
     Email = email;
-    Address = address;
+//    Address = address;
   }
 
   public User() {
@@ -86,13 +84,13 @@ public class User {
     Email = email;
   }
 
-  public Address getAddress() {
-    return Address;
-  }
-
-  public void setAddress(Address address) {
-    Address = address;
-  }
+//  public Address getAddress() {
+//    return Address;
+//  }
+//
+//  public void setAddress(Address address) {
+//    Address = address;
+//  }
 
   public String getFirstName() {
     return firstName;
